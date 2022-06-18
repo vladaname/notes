@@ -1,0 +1,76 @@
+package com.example.notes.model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the obaveza_tabela database table.
+ * 
+ */
+@Entity
+@Table(name="obaveza_tabela")
+@NamedQuery(name="ObavezaTabela.findAll", query="SELECT o FROM ObavezaTabela o")
+public class ObavezaTabela implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_obaveza")
+	private int idObaveza;
+
+	@Column(name="id_obaveza")
+	private int idObaveza;
+
+	private String opis;
+
+	private String opis;
+
+	//bi-directional many-to-one association to Osoba
+	@ManyToOne
+	private Osoba osoba;
+
+	public ObavezaTabela() {
+	}
+
+	public int getIdObaveza() {
+		return this.idObaveza;
+	}
+
+	public void setIdObaveza(int idObaveza) {
+		this.idObaveza = idObaveza;
+	}
+
+	public int getIdObaveza() {
+		return this.idObaveza;
+	}
+
+	public void setIdObaveza(int idObaveza) {
+		this.idObaveza = idObaveza;
+	}
+
+	public String getOpis() {
+		return this.opis;
+	}
+
+	public void setOpis(String opis) {
+		this.opis = opis;
+	}
+
+	public String getOpis() {
+		return this.opis;
+	}
+
+	public void setOpis(String opis) {
+		this.opis = opis;
+	}
+
+	public Osoba getOsoba() {
+		return this.osoba;
+	}
+
+	public void setOsoba(Osoba osoba) {
+		this.osoba = osoba;
+	}
+
+}
